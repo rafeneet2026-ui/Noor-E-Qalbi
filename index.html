@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter to Madam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500&family=Amiri:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Allura&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #FFF5F7;
+            --madam-gold: #D4AF37;
+            --text-dark: #4A4E69;
+            --text-romantic: #6B4E71;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-pink);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .font-arabic { font-family: 'Amiri', serif; }
+        .font-romantic { font-family: 'Dancing Script', cursive; }
+        .font-signature { font-family: 'Allura', cursive; }
+
+        /* Madam Highlight - Golden Glow */
+        .madam-pink {
+            color: var(--madam-gold);
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .ammi-highlight {
+            color: #B06D85;
+            font-weight: 500;
+        }
+
+        .kohinoor-style {
+            font-family: 'Playfair Display', serif;
+            color: #0F4C81;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .nikah-highlight {
+            font-family: 'Playfair Display', serif;
+            color: #800020;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Particles & Background */
+        .heart-particle {
+            position: fixed;
+            bottom: -20px;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Glass Card UI */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Buttons */
+        .btn-premium {
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .btn-premium:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(219, 39, 119, 0.15);
+        }
+
+        /* Page Transitions */
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(15px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        canvas {
+            touch-action: none;
+        }
+
+        .confetti {
+            position: fixed;
+            top: -10px;
+            pointer-events: none;
+            z-index: 50;
+            animation: confettiFall linear forwards;
+        }
+        @keyframes confettiFall {
+            to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
